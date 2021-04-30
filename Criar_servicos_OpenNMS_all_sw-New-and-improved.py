@@ -1,10 +1,7 @@
 import ipaddress
 import sys
 import datetime
-from typing import Counter
 import openpyxl
-from openpyxl.descriptors.base import DateTime
-from openpyxl.reader.excel import _validate_archive
 
 
 def main():
