@@ -1,0 +1,266 @@
+2021-05-10 14:38:12,474:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.17.90.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.244', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.245', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.246', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.247', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:38:12,478:INFO:__main__:Accessing: 0119 (10.17.90.241)
+2021-05-10 14:38:12,479:INFO:__main__:Accessing: 0119 (10.17.90.242)
+2021-05-10 14:38:12,532:INFO:__main__:Accessing: 0119 (10.17.90.243)
+2021-05-10 14:38:12,535:INFO:__main__:Accessing: 0119 (10.17.90.244)
+2021-05-10 14:38:12,538:INFO:__main__:Accessing: 0119 (10.17.90.245)
+2021-05-10 14:38:12,541:INFO:__main__:Accessing: 0119 (10.17.90.246)
+2021-05-10 14:38:12,587:INFO:__main__:Accessing: 0119 (10.17.90.247)
+2021-05-10 14:38:17,911:INFO:__main__:Timeout exception on 0119 (10.17.90.247)
+2021-05-10 14:38:28,115:INFO:__main__:Number of equipments: 7
+2021-05-10 14:38:28,115:INFO:__main__:Finished in 22.967 second(s)
+2021-05-10 14:38:28,115:INFO:__main__:Started at 2021-05-10 14:38:05.147991 and finished at 2021-05-10 14:38:28.115147
+
+2021-05-10 14:39:19,342:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:39:19,346:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:39:19,347:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:39:19,348:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:39:23,721:INFO:__main__:Number of equipments: 3
+2021-05-10 14:39:23,722:INFO:__main__:Finished in 11.638 second(s)
+2021-05-10 14:39:23,722:INFO:__main__:Started at 2021-05-10 14:39:12.083899 and finished at 2021-05-10 14:39:23.721588
+
+2021-05-10 14:40:03,383:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:40:24,663:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:40:29,050:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:40:30,901:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:40:58,127:INFO:__main__:Number of equipments: 3
+2021-05-10 14:40:58,128:INFO:__main__:Finished in 75.933 second(s)
+2021-05-10 14:40:58,128:INFO:__main__:Started at 2021-05-10 14:39:42.194951 and finished at 2021-05-10 14:40:58.127555
+
+2021-05-10 14:41:56,770:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:41:56,780:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:41:56,784:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:41:56,787:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:42:01,099:INFO:__main__:Number of equipments: 3
+2021-05-10 14:42:01,099:INFO:__main__:Finished in 21.907 second(s)
+2021-05-10 14:42:01,100:INFO:__main__:Started at 2021-05-10 14:41:39.192118 and finished at 2021-05-10 14:42:01.098900
+
+2021-05-10 14:42:50,214:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:42:50,224:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:42:50,227:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:42:50,231:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:43:02,684:INFO:__main__:Number of equipments: 3
+2021-05-10 14:43:02,685:INFO:__main__:Finished in 30.304 second(s)
+2021-05-10 14:43:02,685:INFO:__main__:Started at 2021-05-10 14:42:32.381160 and finished at 2021-05-10 14:43:02.684901
+
+2021-05-10 14:43:40,433:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:43:40,446:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:43:40,448:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:43:40,451:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:44:19,446:INFO:__main__:Number of equipments: 3
+2021-05-10 14:44:19,447:INFO:__main__:Finished in 55.766 second(s)
+2021-05-10 14:44:19,447:INFO:__main__:Started at 2021-05-10 14:43:23.680836 and finished at 2021-05-10 14:44:19.446876
+
+2021-05-10 14:45:19,383:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:45:19,394:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:45:19,395:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:45:19,400:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:45:59,874:INFO:__main__:Number of equipments: 3
+2021-05-10 14:45:59,874:INFO:__main__:Finished in 57.286 second(s)
+2021-05-10 14:45:59,875:INFO:__main__:Started at 2021-05-10 14:45:02.587357 and finished at 2021-05-10 14:45:59.873788
+
+2021-05-10 14:48:21,324:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:48:21,328:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:48:21,329:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:48:21,330:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:50:12,780:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:50:12,784:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:50:12,785:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:50:12,787:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:50:52,329:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:50:52,333:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:50:52,334:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:50:52,335:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:51:29,243:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:51:29,247:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:51:29,248:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:51:29,303:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:52:07,561:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:52:07,564:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:52:07,565:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:52:07,567:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:53:15,510:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:53:15,514:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:53:15,515:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:53:15,516:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:57:41,701:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:57:41,705:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:57:41,706:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:57:41,707:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:57:45,119:INFO:__main__:Number of equipments: 3
+2021-05-10 14:57:45,119:INFO:__main__:Finished in 10.304 second(s)
+2021-05-10 14:57:45,120:INFO:__main__:Started at 2021-05-10 14:57:34.815142 and finished at 2021-05-10 14:57:45.119064
+
+2021-05-10 14:58:53,976:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 14:58:53,980:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 14:58:53,981:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 14:58:53,982:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 14:59:04,694:INFO:__main__:Number of equipments: 3
+2021-05-10 14:59:04,695:INFO:__main__:Finished in 17.630 second(s)
+2021-05-10 14:59:04,695:INFO:__main__:Started at 2021-05-10 14:58:47.063371 and finished at 2021-05-10 14:59:04.693890
+
+2021-05-10 15:04:21,525:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:04:21,529:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 15:04:21,530:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 15:04:21,531:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 15:04:26,071:INFO:__main__:Number of equipments: 3
+2021-05-10 15:04:26,072:INFO:__main__:Finished in 11.762 second(s)
+2021-05-10 15:04:26,072:INFO:__main__:Started at 2021-05-10 15:04:14.310009 and finished at 2021-05-10 15:04:26.071717
+
+2021-05-10 15:04:56,815:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:04:56,819:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 15:04:56,820:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 15:04:56,821:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 15:05:02,551:INFO:__main__:Number of equipments: 3
+2021-05-10 15:05:02,552:INFO:__main__:Finished in 12.766 second(s)
+2021-05-10 15:05:02,552:INFO:__main__:Started at 2021-05-10 15:04:49.786018 and finished at 2021-05-10 15:05:02.551883
+
+2021-05-10 15:08:42,035:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:08:42,039:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 15:08:42,040:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 15:08:42,101:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 15:08:47,462:INFO:__main__:Number of equipments: 3
+2021-05-10 15:08:47,462:INFO:__main__:Finished in 12.348 second(s)
+2021-05-10 15:08:47,463:INFO:__main__:Started at 2021-05-10 15:08:35.114289 and finished at 2021-05-10 15:08:47.462144
+
+2021-05-10 15:09:09,242:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:10:04,779:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:10:11,492:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 15:10:11,494:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 15:10:14,835:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 15:10:51,555:INFO:__main__:Number of equipments: 3
+2021-05-10 15:10:51,556:INFO:__main__:Finished in 66.421 second(s)
+2021-05-10 15:10:51,557:INFO:__main__:Started at 2021-05-10 15:09:45.134939 and finished at 2021-05-10 15:10:51.555789
+
+2021-05-10 15:11:40,527:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:13:37,024:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:13:37,027:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 15:13:37,029:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 15:13:37,032:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 15:13:41,637:INFO:__main__:Number of equipments: 3
+2021-05-10 15:13:41,638:INFO:__main__:Finished in 11.647 second(s)
+2021-05-10 15:13:41,638:INFO:__main__:Started at 2021-05-10 15:13:29.990852 and finished at 2021-05-10 15:13:41.637634
+
+2021-05-10 15:15:57,752:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.17.90.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.244', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.245', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.246', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.247', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:15:57,756:INFO:__main__:Accessing: 0119 (10.17.90.241)
+2021-05-10 15:15:57,757:INFO:__main__:Accessing: 0119 (10.17.90.242)
+2021-05-10 15:15:57,758:INFO:__main__:Accessing: 0119 (10.17.90.243)
+2021-05-10 15:15:57,760:INFO:__main__:Accessing: 0119 (10.17.90.244)
+2021-05-10 15:15:57,763:INFO:__main__:Accessing: 0119 (10.17.90.245)
+2021-05-10 15:15:57,861:INFO:__main__:Accessing: 0119 (10.17.90.246)
+2021-05-10 15:15:57,864:INFO:__main__:Accessing: 0119 (10.17.90.247)
+2021-05-10 15:16:03,202:INFO:__main__:Timeout exception on 0119 (10.17.90.247)
+2021-05-10 15:16:07,084:INFO:__main__:Number of equipments: 7
+2021-05-10 15:16:07,085:INFO:__main__:Finished in 16.422 second(s)
+2021-05-10 15:16:07,085:INFO:__main__:Started at 2021-05-10 15:15:50.662297 and finished at 2021-05-10 15:16:07.084748
+
+2021-05-10 15:16:42,293:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.17.90.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.244', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.245', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.246', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.247', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:16:42,297:INFO:__main__:Accessing: 0119 (10.17.90.241)
+2021-05-10 15:16:42,298:INFO:__main__:Accessing: 0119 (10.17.90.242)
+2021-05-10 15:16:42,299:INFO:__main__:Accessing: 0119 (10.17.90.243)
+2021-05-10 15:16:42,300:INFO:__main__:Accessing: 0119 (10.17.90.244)
+2021-05-10 15:16:42,302:INFO:__main__:Accessing: 0119 (10.17.90.245)
+2021-05-10 15:16:42,304:INFO:__main__:Accessing: 0119 (10.17.90.246)
+2021-05-10 15:16:42,306:INFO:__main__:Accessing: 0119 (10.17.90.247)
+2021-05-10 15:16:47,708:INFO:__main__:Timeout exception on 0119 (10.17.90.247)
+2021-05-10 15:16:52,894:INFO:__main__:Number of equipments: 7
+2021-05-10 15:16:52,895:INFO:__main__:Finished in 17.619 second(s)
+2021-05-10 15:16:52,895:INFO:__main__:Started at 2021-05-10 15:16:35.275852 and finished at 2021-05-10 15:16:52.894905
+
+2021-05-10 15:17:06,302:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.17.90.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.244', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.245', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.246', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.247', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 15:17:06,306:INFO:__main__:Accessing: 0119 (10.17.90.241)
+2021-05-10 15:17:06,307:INFO:__main__:Accessing: 0119 (10.17.90.242)
+2021-05-10 15:17:06,308:INFO:__main__:Accessing: 0119 (10.17.90.243)
+2021-05-10 15:17:06,312:INFO:__main__:Accessing: 0119 (10.17.90.244)
+2021-05-10 15:17:06,314:INFO:__main__:Accessing: 0119 (10.17.90.245)
+2021-05-10 15:17:06,315:INFO:__main__:Accessing: 0119 (10.17.90.246)
+2021-05-10 15:17:06,407:INFO:__main__:Accessing: 0119 (10.17.90.247)
+2021-05-10 15:17:11,660:INFO:__main__:Timeout exception on 0119 (10.17.90.247)
+2021-05-10 15:17:18,821:INFO:__main__:Number of equipments: 7
+2021-05-10 15:17:18,822:INFO:__main__:Finished in 19.439 second(s)
+2021-05-10 15:17:18,822:INFO:__main__:Started at 2021-05-10 15:16:59.382917 and finished at 2021-05-10 15:17:18.821745
+
+2021-05-10 16:01:38,684:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.17.90.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.244', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.245', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.246', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.247', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 16:01:38,688:INFO:__main__:Accessing: 0119 (10.17.90.241)
+2021-05-10 16:01:38,689:INFO:__main__:Accessing: 0119 (10.17.90.242)
+2021-05-10 16:01:38,690:INFO:__main__:Accessing: 0119 (10.17.90.243)
+2021-05-10 16:01:38,692:INFO:__main__:Accessing: 0119 (10.17.90.244)
+2021-05-10 16:01:38,693:INFO:__main__:Accessing: 0119 (10.17.90.245)
+2021-05-10 16:01:38,752:INFO:__main__:Accessing: 0119 (10.17.90.246)
+2021-05-10 16:01:38,916:INFO:__main__:Accessing: 0119 (10.17.90.247)
+2021-05-10 16:01:43,951:INFO:__main__:Timeout exception on 0119 (10.17.90.242)
+2021-05-10 16:01:43,951:INFO:__main__:Timeout exception on 0119 (10.17.90.243)
+2021-05-10 16:01:43,952:INFO:__main__:Timeout exception on 0119 (10.17.90.241)
+2021-05-10 16:01:44,029:INFO:__main__:Timeout exception on 0119 (10.17.90.244)
+2021-05-10 16:01:44,060:INFO:__main__:Timeout exception on 0119 (10.17.90.246)
+2021-05-10 16:01:44,062:INFO:__main__:Timeout exception on 0119 (10.17.90.245)
+2021-05-10 16:01:44,075:INFO:__main__:Timeout exception on 0119 (10.17.90.247)
+2021-05-10 16:01:44,079:INFO:__main__:Number of equipments: 7
+2021-05-10 16:01:44,081:INFO:__main__:Finished in 12.239 second(s)
+2021-05-10 16:01:44,082:INFO:__main__:Started at 16:01:31 10/05/2021 and finished at 16:01:44 10/05/2021
+
+2021-05-10 16:02:15,079:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.17.90.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.244', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.245', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.246', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.247', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 16:02:15,083:INFO:__main__:Accessing: 0119 (10.17.90.241)
+2021-05-10 16:02:15,083:INFO:__main__:Accessing: 0119 (10.17.90.242)
+2021-05-10 16:02:15,085:INFO:__main__:Accessing: 0119 (10.17.90.243)
+2021-05-10 16:02:15,086:INFO:__main__:Accessing: 0119 (10.17.90.244)
+2021-05-10 16:02:15,087:INFO:__main__:Accessing: 0119 (10.17.90.245)
+2021-05-10 16:02:15,092:INFO:__main__:Accessing: 0119 (10.17.90.246)
+2021-05-10 16:02:15,268:INFO:__main__:Accessing: 0119 (10.17.90.247)
+2021-05-10 16:02:20,428:INFO:__main__:Timeout exception on 0119 (10.17.90.247)
+2021-05-10 16:02:28,343:INFO:__main__:Number of equipments: 7
+2021-05-10 16:02:28,344:INFO:__main__:Finished in 20.850 second(s)
+2021-05-10 16:02:28,344:INFO:__main__:Started at 16:02:07 10/05/2021 and finished at 16:02:28 10/05/2021
+
+2021-05-10 16:02:47,748:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.17.90.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.244', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.245', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.246', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.247', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 16:02:47,752:INFO:__main__:Accessing: 0119 (10.17.90.241)
+2021-05-10 16:02:47,753:INFO:__main__:Accessing: 0119 (10.17.90.242)
+2021-05-10 16:02:47,755:INFO:__main__:Accessing: 0119 (10.17.90.243)
+2021-05-10 16:02:47,759:INFO:__main__:Accessing: 0119 (10.17.90.244)
+2021-05-10 16:02:47,761:INFO:__main__:Accessing: 0119 (10.17.90.245)
+2021-05-10 16:02:47,762:INFO:__main__:Accessing: 0119 (10.17.90.246)
+2021-05-10 16:02:47,765:INFO:__main__:Accessing: 0119 (10.17.90.247)
+2021-05-10 16:02:53,171:INFO:__main__:Timeout exception on 0119 (10.17.90.247)
+2021-05-10 16:03:00,589:INFO:__main__:Number of equipments: 7
+2021-05-10 16:03:00,589:INFO:__main__:Finished in 19.888 second(s)
+2021-05-10 16:03:00,590:INFO:__main__:Started at 16:02:40 10/05/2021 and finished at 16:03:00 10/05/2021
+
+2021-05-10 16:20:00,694:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.17.90.241', 'username': 'jcaldeira', 'password': 'CLD@caldeira0', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.242', 'username': 'jcaldeira', 'password': 'CLD@caldeira0', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.243', 'username': 'jcaldeira', 'password': 'CLD@caldeira0', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.244', 'username': 'jcaldeira', 'password': 'CLD@caldeira0', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.245', 'username': 'jcaldeira', 'password': 'CLD@caldeira0', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.246', 'username': 'jcaldeira', 'password': 'CLD@caldeira0', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.247', 'username': 'jcaldeira', 'password': 'CLD@caldeira0', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 16:20:00,698:INFO:__main__:Accessing: 0119 (10.17.90.241)
+2021-05-10 16:20:00,698:INFO:__main__:Accessing: 0119 (10.17.90.242)
+2021-05-10 16:20:00,699:INFO:__main__:Accessing: 0119 (10.17.90.243)
+2021-05-10 16:20:00,700:INFO:__main__:Accessing: 0119 (10.17.90.244)
+2021-05-10 16:20:00,703:INFO:__main__:Accessing: 0119 (10.17.90.245)
+2021-05-10 16:20:00,775:INFO:__main__:Accessing: 0119 (10.17.90.246)
+2021-05-10 16:20:00,889:INFO:__main__:Accessing: 0119 (10.17.90.247)
+2021-05-10 16:20:05,496:INFO:__main__:Authentication failed on 0119 (10.17.90.241)
+2021-05-10 16:20:06,269:INFO:__main__:Authentication failed on 0119 (10.17.90.244)
+2021-05-10 16:20:06,355:INFO:__main__:Authentication failed on 0119 (10.17.90.243)
+2021-05-10 16:20:06,368:INFO:__main__:Authentication failed on 0119 (10.17.90.242)
+2021-05-10 16:20:06,513:INFO:__main__:Authentication failed on 0119 (10.17.90.246)
+2021-05-10 16:20:06,528:INFO:__main__:Authentication failed on 0119 (10.17.90.245)
+2021-05-10 16:20:10,396:INFO:__main__:Authentication failed on 0119 (10.17.90.247)
+2021-05-10 16:20:10,397:INFO:__main__:Number of equipments: 7
+2021-05-10 16:20:10,398:INFO:__main__:Finished in 18.168 second(s)
+2021-05-10 16:20:10,398:INFO:__main__:Started at 16:19:52 10/05/2021 and finished at 16:20:10 10/05/2021
+
+2021-05-10 16:28:40,074:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.21.38.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.21.38.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0287', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 16:28:40,087:INFO:__main__:Accessing: 0287 (10.21.38.241)
+2021-05-10 16:28:40,088:INFO:__main__:Accessing: 0287 (10.21.38.242)
+2021-05-10 16:28:40,097:INFO:__main__:Accessing: 0287 (10.21.38.243)
+2021-05-10 16:28:44,415:INFO:__main__:Number of equipments: 3
+2021-05-10 16:28:44,416:INFO:__main__:Finished in 33.197 second(s)
+2021-05-10 16:28:44,417:INFO:__main__:Started at 16:28:11 10/05/2021 and finished at 16:28:44 10/05/2021
+
+2021-05-10 16:30:15,562:DEBUG:__main__:device_list: [{'device_type': 'cisco_ios', 'ip': '10.17.90.241', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.242', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.243', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.244', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.245', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.246', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}, {'device_type': 'cisco_ios', 'ip': '10.17.90.247', 'username': 'jcaldeira', 'password': 'CoN9m2%wVn^G', 'secret': '0119', 'ssh_config_file': '~/.ssh/config'}]
+2021-05-10 16:30:15,566:INFO:__main__:Accessing: 0119 (10.17.90.241)
+2021-05-10 16:30:15,566:INFO:__main__:Accessing: 0119 (10.17.90.242)
+2021-05-10 16:30:15,568:INFO:__main__:Accessing: 0119 (10.17.90.243)
+2021-05-10 16:30:15,569:INFO:__main__:Accessing: 0119 (10.17.90.244)
+2021-05-10 16:30:15,570:INFO:__main__:Accessing: 0119 (10.17.90.245)
+2021-05-10 16:30:15,634:INFO:__main__:Accessing: 0119 (10.17.90.246)
+2021-05-10 16:30:15,677:INFO:__main__:Accessing: 0119 (10.17.90.247)
+2021-05-10 16:30:22,276:INFO:__main__:Number of equipments: 7
+2021-05-10 16:30:22,277:INFO:__main__:Finished in 14.336 second(s)
+2021-05-10 16:30:22,278:INFO:__main__:Started at 16:30:07 10/05/2021 and finished at 16:30:22 10/05/2021
+
