@@ -12,7 +12,11 @@ import openpyxl
 
 
 def main():
-    excel = r"C:\Users\joao.caldeira.ext\SPMS - Serviços Partilhados do Ministério da Saúde, EPE\SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro\RIS2020 - Cadastro.xlsx"
+    if sys.platform in ("linux", "darwin"):
+        excel = "/mnt/c/Users/joao.caldeira.ext/SPMS - Serviços Partilhados do Ministério da Saúde, EPE/SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro/RIS2020 - Cadastro.xlsx"
+    elif sys.platform == "win32":
+        excel = r"C:\Users\joao.caldeira.ext\SPMS - Serviços Partilhados do Ministério da Saúde, EPE\SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro\RIS2020 - Cadastro.xlsx"
+
     excelFileName = os.path.basename(excel)
     pathToExcelFile = os.path.dirname(excel)
 
@@ -23,7 +27,7 @@ def main():
         wb = openpyxl.load_workbook(excel, data_only=True, read_only=True)
         delTempFileFlag = False
     except PermissionError as e:
-        print(f"File is open, so cannot be accessed:\n{e.filename}\n")
+        print(f"File is in use, so cannot be accessed:\n{e.filename}\n")
         createTempFile(pathToExcelFile, os.getcwd(), excelFileName)
         print("Temporary copy of file created to work with\n")
         wb = openpyxl.load_workbook(excelFileName, data_only=True, read_only=True)
@@ -36,40 +40,44 @@ def main():
     sheet = wb["RIS2020"]
     counter = 0
     excluded_ids = []
+    included_ids = ['0346','0557','0621','1518']
     excluded_ips = []
-    for row in sheet.iter_rows(min_row=3, values_only=True):
-        if type(row[26]) == datetime.datetime:
-        # if row[26] is not None:
-            data_presi = row[26].date()
-            ip = str(row[24])
-            hostname = str(row[23])
-            site_id = hostname[:4]
-            # if validate_ip(ip) and validate_date_inter(data_presi) and site_id not in excluded_ids and ip not in excluded_ips:
-            # if validate_ip(ip) and hostname == '0073-B01-SW01':
-            if validate_ip(ip) and site_id == '0287':
-                if str(row[0]) == site_id:
+    included_ips = []
+    with open(os.path.join('Outputs', 'output-servicos.txt'), 'wt') as f:
+        for row in sheet.iter_rows(min_row=3, values_only=True):
+            if type(row[26]) == datetime.datetime:
+            # if row[26] is not None:
+                data_presi = row[26].date()
+                ip = str(row[24])
+                hostname = str(row[23])
+                site_id = row[0]
+                # if validate_ip(ip) and validate_date_inter(data_presi) and site_id not in excluded_ids and ip not in excluded_ips:
+                # if validate_ip(ip) and hostname == '0073-B01-SW01':
+                if validate_ip(ip) and site_id == '0345':
+                # if validate_ip(ip) and site_id in included_ids or ip in included_ips:
+                    # if str(hostname[:4]) == site_id:
                     entidade, morada, cp, localidade, latitude, longitude, requisition, modelo, serial, node_id = site_info(chars_a_remover, chars_a_inserir, row)
 
-                    print(f"/opt/opennms/bin/provision.pl service add '{requisition}' {node_id} {ip} ICMP")
-                    print(f"/opt/opennms/bin/provision.pl service add '{requisition}' {node_id} {ip} SNMP")
-                    print(f"/opt/opennms/bin/provision.pl category remove '{requisition}' {node_id} '{entidade}'")
-                    print(f"/opt/opennms/bin/provision.pl category add '{requisition}' {node_id} '{entidade.upper()}'")
-                    print(f"/opt/opennms/bin/provision.pl category add '{requisition}' {node_id} 'Production'")
-                    print(f"/opt/opennms/bin/provision.pl category add '{requisition}' {node_id} 'Switches'")
-                    print(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} address1 '{morada}'")
-                    print(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} zip '{cp}'")
-                    print(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} city '{localidade}'")
-                    print(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} modelNumber '{modelo}'")
-                    print(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} serialNumber '{serial}'")
-                    print(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} latitude '{latitude}'")
-                    print(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} longitude '{longitude}'")
-                    print(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} country Portugal")
-                    print(f"/opt/opennms/bin/provision.pl requisition import {requisition}\n\n")
+                    f.write(f"/opt/opennms/bin/provision.pl service add '{requisition}' {node_id} {ip} ICMP\n")
+                    f.write(f"/opt/opennms/bin/provision.pl service add '{requisition}' {node_id} {ip} SNMP\n")
+                    f.write(f"/opt/opennms/bin/provision.pl category remove '{requisition}' {node_id} '{entidade}'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl category add '{requisition}' {node_id} '{entidade.upper()}'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl category add '{requisition}' {node_id} 'Production'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl category add '{requisition}' {node_id} 'Switches'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} address1 '{morada}'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} zip '{cp}'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} city '{localidade}'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} modelNumber '{modelo}'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} serialNumber '{serial}'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} latitude '{latitude}'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} longitude '{longitude}'\n")
+                    f.write(f"/opt/opennms/bin/provision.pl asset add '{requisition}' {node_id} country Portugal\n")
+                    f.write(f"/opt/opennms/bin/provision.pl requisition import {requisition}\n\n")
+
+                    print(f"Completed: {site_id} ({ip})")
 
                     counter += 1
 
-                else:
-                    print(f"IDs do not match {site_id} (on switch name)\n")
 
     wb.close()
     if delTempFileFlag == True:
