@@ -52,8 +52,8 @@ def validate_ip(ip):
 
 
 def validate_date_inter(date):
-    low_date_lim = datetime.date(2021, 5, 4)
-    high_date_lim = datetime.date(2021, 5, 5)
+    low_date_lim = datetime.date(2021, 5, 10)
+    high_date_lim = datetime.date(2021, 5, 12)
     return low_date_lim <= date <= high_date_lim
 
 
@@ -68,21 +68,24 @@ def cls():
 
 def createTempFile(pathToExcelFile, cwd, excelFileName):
     if sys.platform in ("linux", "darwin"):
-        sys.exit(f"Copy mechanism of in use files not implemented in non Windows platforms")
+        subprocess.run(["cp", pathToExcelFile, cwd, excelFileName])
     elif sys.platform == "win32":
         subprocess.run(["robocopy", pathToExcelFile, cwd, excelFileName], shell=True, stdout=subprocess.DEVNULL)
 
 
 
 def env_exec():
-    # excel = r"C:\Users\joao.caldeira.ext\SPMS - Serviços Partilhados do Ministério da Saúde, EPE\SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro\RIS2020 - Cadastro.xlsx"
-    excel = "/mnt/c/Users/joao.caldeira.ext/SPMS - Serviços Partilhados do Ministério da Saúde, EPE/SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro/RIS2020 - Cadastro.xlsx"
+    if sys.platform in ("linux", "darwin"):
+        excel = "/mnt/c/Users/joao.caldeira.ext/SPMS - Serviços Partilhados do Ministério da Saúde, EPE/SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro/RIS2020 - Cadastro.xlsx"
+    elif sys.platform == "win32":
+        excel = r"C:\Users\joao.caldeira.ext\SPMS - Serviços Partilhados do Ministério da Saúde, EPE\SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro\RIS2020 - Cadastro.xlsx"
 
     excelFileName = os.path.basename(excel)
     pathToExcelFile = os.path.dirname(excel)
 
     username = 'jcaldeira'
     password = os.getenv('PWD_TACACS_RIS_SPMS')
+    # password = os.getenv('PWD_TACACS_RIS_ALTICE')
 
     try:
         wb = openpyxl.load_workbook(excel, data_only=True, read_only=True)
@@ -99,7 +102,9 @@ def env_exec():
     sheet = wb["RIS2020"]
     device_list = []
     excluded_ids = []
+    included_ids = []
     excluded_ips = []
+    included_ips = []
 
     for row in sheet.iter_rows(min_row=3, values_only=True):
         if type(row[26]) == datetime.datetime:
@@ -107,11 +112,12 @@ def env_exec():
             data_presi = row[26].date()
             ip = str(row[24])
             hostname = str(row[23])
-            site_id = hostname[:4]
+            site_id = row[0]
             # if validate_ip(ip) and validate_date_inter(data_presi) and site_id not in excluded_ids and ip not in excluded_ips:
             # if validate_ip(ip) and hostname == '0073-B01-SW01':
-            if validate_ip(ip) and site_id == '0119':
-                if str(row[0]) == site_id:
+            if validate_ip(ip) and site_id == '0345':
+            # if validate_ip(ip) and site_id in included_ids or ip in included_ips:
+                # if str(hostname[:4]) == site_id:
                     equipment = {
                         'device_type': 'cisco_ios',
                         'ip': ip,
@@ -156,7 +162,7 @@ def connect_and_commands(equipment):
         main_logger.info(f"Error reading SSH protocol banner on {equipment['secret']} ({equipment['ip']})")
 
     except:
-        main_logger.exception(f"An error has occurred on {equipment['secret']} ({equipment['ip']})")
+        main_logger.info(f"An error has occurred on {equipment['secret']} ({equipment['ip']})")
 
     else:
         hostname, model, serial_number, ios = equip_info(output, hostname)
@@ -189,8 +195,9 @@ def equip_info(output, hostname):
 
 
 def write_output(equipment, model, serial_number, ios, hostname):
-    with open(os.path.join(os.getcwd(), 'output.txt'), 'at') as f:
+    with open(os.path.join('Outputs', 'output-SW-info.txt'), 'at') as f:
         f.write(f"{equipment['secret']} ({equipment['ip']}): {model}\t{serial_number}\t{ios}\t{hostname}\n")
+        main_logger.info(f"Completed: {equipment['secret']} ({equipment['ip']})")
 
 
 
