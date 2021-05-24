@@ -25,7 +25,7 @@ main_logger.setLevel(logging.DEBUG) # definir o nível de verbosidade do logger
 file_formatter = logging.Formatter('%(asctime)s:%(levelname)s:%(name)s:%(message)s') # criar o formato dos logs a aplicar no file_formatter
 steam_formatter = logging.Formatter('%(message)s') # criar o formato dos logs a aplicar no stream_handler
 
-file_handler = logging.FileHandler(f'{os.path.splitext(os.path.basename(__file__))[0]}.log') # criar ficheiro de logs
+file_handler = logging.FileHandler(f'{os.path.join("Logs",os.path.splitext(os.path.basename(__file__))[0])}.log') # criar ficheiro de logs
 file_handler.setLevel(logging.DEBUG) # definir o nível de verbosidade do file_handler
 file_handler.setFormatter(file_formatter) # aplicar o formato de log anteriormente criado
 
@@ -70,7 +70,7 @@ def createTempFile(pathToExcelFile, cwd, excelFileName):
     if sys.platform in ("linux", "darwin"):
         subprocess.run(["cp", pathToExcelFile, cwd, excelFileName])
     elif sys.platform == "win32":
-        subprocess.run(["robocopy", pathToExcelFile, cwd, excelFileName], shell=True, stdout=subprocess.DEVNULL)
+        subprocess.run(["robocopy", pathToExcelFile, cwd, f'{os.path.splitext(excelFileName)[0]}.temp{os.path.splitext(excelFileName)[1]}'], shell=True, stdout=subprocess.DEVNULL)
 
 
 
