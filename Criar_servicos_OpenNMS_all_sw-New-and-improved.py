@@ -133,7 +133,7 @@ def createTempFile(pathToExcelFile, cwd, excelFileName):
     if sys.platform in ("linux", "darwin"):
         sys.exit(f"Copy mechanism of in use files not implemented in non Windows platforms")
     elif sys.platform == "win32":
-        subprocess.run(["robocopy", pathToExcelFile, cwd, excelFileName], shell=True, stdout=subprocess.DEVNULL)
+        subprocess.run(["robocopy", pathToExcelFile, cwd, f'{os.path.splitext(excelFileName)[0]}.temp{os.path.splitext(excelFileName)[1]}'], shell=True, stdout=subprocess.DEVNULL)
 
 
 
