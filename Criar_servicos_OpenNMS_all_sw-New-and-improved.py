@@ -20,8 +20,39 @@ def main():
     excelFileName = os.path.basename(excel)
     pathToExcelFile = os.path.dirname(excel)
 
-    chars_a_remover = ['á','Á','à','À','ã','Ã','â','Â','é','É','è','È','ê','Ê','í','Í','ó','Ó','õ','Õ','ô','Ô','ú','Ú','û','Û','ù','Ù','ç','s/n']
-    chars_a_inserir = ['a','A','a','A','a','A','a','A','e','E','e','E','e','E','i','I','o','O','o','O','o','O','u','U','u','U','u','U','c','']
+    chars = {
+        'á': 'a',
+        'Á': 'A',
+        'à': 'a',
+        'À': 'A',
+        'ã': 'a',
+        'Ã': 'A',
+        'â': 'a',
+        'Â': 'A',
+        'é': 'e',
+        'É': 'E',
+        'è': 'e',
+        'È': 'E',
+        'ê': 'e',
+        'Ê': 'E',
+        'í': 'i',
+        'Í': 'I',
+        'ó': 'o',
+        'Ó': 'O',
+        'õ': 'o',
+        'Õ': 'O',
+        'ô': 'o',
+        'Ô': 'O',
+        'ú': 'u',
+        'Ú': 'U',
+        'û': 'u',
+        'Û': 'U',
+        'ù': 'u',
+        'Ù': 'U',
+        'ç': 'c',
+        's/n': '',
+        'S/N': ''
+    }
 
     try:
         wb = openpyxl.load_workbook(excel, data_only=True, read_only=True)
@@ -40,7 +71,7 @@ def main():
     sheet = wb["RIS2020"]
     counter = 0
     excluded_ids = []
-    included_ids = ['0346','0557','0621','1518']
+    included_ids = []
     excluded_ips = []
     included_ips = []
     with open(os.path.join('Outputs', 'output-servicos.txt'), 'wt') as f:
@@ -53,10 +84,10 @@ def main():
                 site_id = row[0]
                 # if validate_ip(ip) and validate_date_inter(data_presi) and site_id not in excluded_ids and ip not in excluded_ips:
                 # if validate_ip(ip) and hostname == '0073-B01-SW01':
-                if validate_ip(ip) and site_id == '0345':
-                # if validate_ip(ip) and site_id in included_ids or ip in included_ips:
+                if validate_ip(ip) and site_id == '0674':
+                # if validate_ip(ip) and (site_id in included_ids or ip in included_ips):
                     # if str(hostname[:4]) == site_id:
-                    entidade, morada, cp, localidade, latitude, longitude, requisition, modelo, serial, node_id = site_info(chars_a_remover, chars_a_inserir, row)
+                    entidade, morada, cp, localidade, latitude, longitude, requisition, modelo, serial, node_id = site_info(row, chars)
 
                     f.write(f"/opt/opennms/bin/provision.pl service add '{requisition}' {node_id} {ip} ICMP\n")
                     f.write(f"/opt/opennms/bin/provision.pl service add '{requisition}' {node_id} {ip} SNMP\n")
@@ -86,7 +117,7 @@ def main():
     print(f'Generated {counter} configurations')
 
 
-def site_info(chars_a_remover, chars_a_inserir, row):
+def site_info(row, chars):
     entidade = str(row[1]).replace(" ","_").strip()
     morada = str(row[4]).strip()
     cp = str(row[5]).strip()
@@ -97,16 +128,19 @@ def site_info(chars_a_remover, chars_a_inserir, row):
     modelo = str(row[20]).strip()
     serial = str(row[21]).strip()
     node_id = str(row[27]).strip()
-    for i in range(0,len(chars_a_remover)):
-        morada = morada.lower().replace(chars_a_remover[i],chars_a_inserir[i]).strip().capitalize()
-        localidade = localidade.lower().replace(chars_a_remover[i], chars_a_inserir[i]).strip().capitalize()
+    for char in morada:
+        if char in chars:
+            morada = morada.replace(char, chars[char]).strip()
+    for char in localidade:
+        if char in chars:
+            localidade = localidade.replace(char, chars[char]).strip()
     return entidade, morada, cp, localidade, latitude, longitude, requisition, modelo, serial, node_id
 
 
 
 def validate_date_inter(date):
-    low_date_lim = datetime.date(2021, 5, 4)
-    high_date_lim = datetime.date(2021, 5, 5)
+    low_date_lim = datetime.date(2021, 5, 24)
+    high_date_lim = datetime.date(2021, 5, 28)
     return low_date_lim <= date <= high_date_lim
 
 
@@ -133,7 +167,7 @@ def createTempFile(pathToExcelFile, cwd, excelFileName):
     if sys.platform in ("linux", "darwin"):
         sys.exit(f"Copy mechanism of in use files not implemented in non Windows platforms")
     elif sys.platform == "win32":
-        subprocess.run(["robocopy", pathToExcelFile, cwd, f'{os.path.splitext(excelFileName)[0]}.temp{os.path.splitext(excelFileName)[1]}'], shell=True, stdout=subprocess.DEVNULL)
+        subprocess.run(["robocopy", pathToExcelFile, cwd, excelFileName], shell=True, stdout=subprocess.DEVNULL)
 
 
 
