@@ -1,6 +1,7 @@
 """
 https://stackoverflow.com/questions/2600775/how-to-get-week-number-in-python
 https://stackoverflow.com/questions/24370385/how-to-format-cell-with-datetime-object-of-the-form-yyyy-mm-dd-hhmmss-in-exc
+https://stackoverflow.com/questions/28517508/read-excel-cell-value-and-not-the-formula-computing-it-openpyxl
 """
 
 import datetime
@@ -13,7 +14,7 @@ from copy import copy
 
 import openpyxl
 from openpyxl.styles import NamedStyle
-from openpyxl.styles import Alignment
+from openpyxl.styles import Alignment, Border, Side
 
 main_logger = logging.getLogger(__name__)
 main_logger.setLevel(logging.DEBUG)
@@ -39,6 +40,7 @@ def main():
         excel2 = '/mnt/c/Users/joao.caldeira.ext/OneDrive - Portugal Telecom/Trabalho/COS/SPMS/PRESI/Calendarização-quattro.xlsx'
     elif sys.platform == 'win32':
         excel = r"C:\Users\joao.caldeira.ext\SPMS - Serviços Partilhados do Ministério da Saúde, EPE\SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro\RIS2020 - Cadastro.xlsx"
+        # excel = r"C:\Users\joao.caldeira.ext\OneDrive - Portugal Telecom\Trabalho\COS\SPMS\PRESI\RIS2020 - Cadastro - Copy.xlsx"
         excel2 = r"C:\Users\joao.caldeira.ext\OneDrive - Portugal Telecom\Trabalho\COS\SPMS\PRESI\Calendarização-quattro.xlsx"
 
     excelFileName = os.path.basename(excel)
@@ -47,48 +49,17 @@ def main():
     excelFileName2 = os.path.basename(excel2)
     pathToExcelFile2 = os.path.dirname(excel2)
 
-    chars_a_remover = {
-                        'á': 'a',
-                        'Á': 'A',
-                        'à': 'a',
-                        'À': 'A',
-                        'ã': 'a',
-                        'Ã': 'A',
-                        'â': 'a',
-                        'Â': 'A',
-                        'é': 'e',
-                        'É': 'E',
-                        'è': 'e',
-                        'È': 'E',
-                        'ê': 'e',
-                        'Ê': 'E',
-                        'í': 'i',
-                        'Í': 'I',
-                        'ó': 'o',
-                        'Ó': 'O',
-                        'õ': 'o',
-                        'Õ': 'O',
-                        'ô': 'o',
-                        'Ô': 'O',
-                        'ú': 'u',
-                        'Ú': 'U',
-                        'û': 'u',
-                        'Û': 'U',
-                        'ù': 'u',
-                        'Ù': 'U',
-                        'ç': 'c',
-                        's/n': ''
-    }
-
     # Open Excel
     try:
-        wb = openpyxl.load_workbook(excel, data_only=True)
+        wb_values = openpyxl.load_workbook(excel, data_only=True)
+        wb = openpyxl.load_workbook(excel)
         delTempFileFlag = False
     except PermissionError as e:
         main_logger.info(f'File is in use, so cannot be accessed:\n{e.filename}\n')
         createTempFile(pathToExcelFile, os.getcwd(), excelFileName)
         main_logger.info('Temporary copy of the file created to work with\n')
-        wb = openpyxl.load_workbook(excel, data_only=True)
+        wb_values = openpyxl.load_workbook(excelFileName, data_only=True)
+        wb = openpyxl.load_workbook(excelFileName)
         delTempFileFlag = True
     except FileNotFoundError as e:
         sys.exit(f'File not found: {e.filename}')
@@ -102,28 +73,31 @@ def main():
         main_logger.info(f'File is in use, so cannot be accessed:\n{e.filename}\n')
         createTempFile(pathToExcelFile2, os.getcwd(), excelFileName2)
         main_logger.info('Temporary copy of the file created to work with\n')
-        wb2 = openpyxl.load_workbook(excel2, data_only=True)
+        wb2 = openpyxl.load_workbook(excelFileName2, data_only=True)
         delTempFileFlag2 = True
     except FileNotFoundError as e:
         sys.exit(f'File not found: {e.filename}')
 
 
+    sheet_values = wb_values['RIS2020']
     sheet = wb['RIS2020']
     sheet2 = wb2[f"Week {datetime.date.today().strftime('%V')}"]
 
-    # date_style = NamedStyle(name='date', number_format='DD/MM/YYYY')
-    date_style = NamedStyle(
-        name='date',
-        number_format='dd-mmmm',
-        alignment=Alignment(
-            horizontal='center',
-            vertical='center',
-        ),
+    style = {
+        'number_format': 'dd-mmm',
+        'alignment': Alignment(horizontal='center', vertical='center'),
+        'border_style': Side(border_style='thin'),
+    }
+    style['border'] = Border(
+        left=style['border_style'],
+        right=style['border_style'],
+        top=style['border_style'],
+        bottom=style['border_style']
     )
 
     lista_sites = []
 
-    # Get all sites with schedule for this week
+    # # Get all sites with schedule for this week
     for row in sheet2.iter_rows(min_row=2, values_only=True):
         if type(row[5]) == datetime.datetime and str(row[10]).upper() == 'CONFIRMADO':
             site_info = {
@@ -132,16 +106,24 @@ def main():
             }
 
             lista_sites.append(site_info)
+
     for site in lista_sites:
-        for row_index, row2 in enumerate(sheet.iter_rows(min_row=3, values_only=True), 3):
-            # if site_info['site_id'] == row2[0] and row2[27] == '':
-            if site['site_id'] == row2[0] and row2[27] == None:
+        for row_index, row2 in enumerate(sheet_values.iter_rows(min_row=3, values_only=True), 3):
+            if site['site_id'] == row2[0] and row2[26] == None:
                 sheet[f'AA{row_index}'].value = site['date_presi']
-                sheet[f'AA{row_index}'].style = date_style
+                sheet[f'AA{row_index}'].alignment = style['alignment']
+                sheet[f'AA{row_index}'].border = style['border']
+                sheet[f'AA{row_index}'].number_format = style['number_format']
 
 
-    wb.save(excel)
+    try:
+        wb.save(excel)
+    except:
+        main_logger.info('Was not possible to save the file\n')
+        input('Try again? <Press ENTER>')
+        wb.save(excel)
 
+    wb_values.close()
     wb.close()
     wb2.close()
     if delTempFileFlag == True:
