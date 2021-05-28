@@ -70,7 +70,7 @@ def createTempFile(pathToExcelFile, cwd, excelFileName):
     if sys.platform in ("linux", "darwin"):
         subprocess.run(["cp", pathToExcelFile, cwd, excelFileName])
     elif sys.platform == "win32":
-        subprocess.run(["robocopy", pathToExcelFile, cwd, f'{os.path.splitext(excelFileName)[0]}.temp{os.path.splitext(excelFileName)[1]}'], shell=True, stdout=subprocess.DEVNULL)
+        subprocess.run(["robocopy", pathToExcelFile, cwd, excelFileName], shell=True, stdout=subprocess.DEVNULL)
 
 
 
@@ -81,6 +81,7 @@ def env_exec():
         excel = r"C:\Users\joao.caldeira.ext\SPMS - Serviços Partilhados do Ministério da Saúde, EPE\SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro\RIS2020 - Cadastro.xlsx"
 
     excelFileName = os.path.basename(excel)
+    excelFileName = f'{os.path.splitext(excelFileName)[0]}.temp{os.path.splitext(excelFileName)[1]}'
     pathToExcelFile = os.path.dirname(excel)
 
     username = 'jcaldeira'
@@ -115,7 +116,7 @@ def env_exec():
             site_id = row[0]
             # if validate_ip(ip) and validate_date_inter(data_presi) and site_id not in excluded_ids and ip not in excluded_ips:
             # if validate_ip(ip) and hostname == '0073-B01-SW01':
-            if validate_ip(ip) and site_id == '0345':
+            if validate_ip(ip) and site_id == '0674':
             # if validate_ip(ip) and site_id in included_ids or ip in included_ips:
                 # if str(hostname[:4]) == site_id:
                     equipment = {
@@ -133,7 +134,7 @@ def env_exec():
     main_logger.debug(f'device_list: {device_list}')
 
 
-    with concurrent.futures.ThreadPoolExecutor() as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
         executor.map(connect_and_commands, device_list)
 
     wb.close()
@@ -162,7 +163,7 @@ def connect_and_commands(equipment):
         main_logger.info(f"Error reading SSH protocol banner on {equipment['secret']} ({equipment['ip']})")
 
     except:
-        main_logger.info(f"An error has occurred on {equipment['secret']} ({equipment['ip']})")
+        main_logger.debug(f"An error has occurred on {equipment['secret']} ({equipment['ip']})")
 
     else:
         hostname, model, serial_number, ios = equip_info(output, hostname)
