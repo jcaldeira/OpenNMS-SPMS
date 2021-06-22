@@ -51,7 +51,9 @@ def main():
         'Ù': 'U',
         'ç': 'c',
         's/n': '',
-        'S/N': ''
+        'S/N': '',
+        'º': 'r',
+        '\'': ''
     }
 
     try:
@@ -128,10 +130,10 @@ def site_info(row, chars):
     modelo = str(row[20]).strip()
     serial = str(row[21]).strip()
     node_id = str(row[27]).strip()
-    for char in morada:
+    for char in chars:
         if char in chars:
             morada = morada.replace(char, chars[char]).strip()
-    for char in localidade:
+    for char in chars:
         if char in chars:
             localidade = localidade.replace(char, chars[char]).strip()
     return entidade, morada, cp, localidade, latitude, longitude, requisition, modelo, serial, node_id
