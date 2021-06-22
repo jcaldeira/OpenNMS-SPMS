@@ -52,8 +52,8 @@ def validate_ip(ip):
 
 
 def validate_date_inter(date):
-    low_date_lim = datetime.date(2021, 5, 10)
-    high_date_lim = datetime.date(2021, 5, 12)
+    low_date_lim = datetime.date(2021, 6, 21)
+    high_date_lim = datetime.date(2021, 6, 22)
     return low_date_lim <= date <= high_date_lim
 
 
@@ -102,8 +102,8 @@ def env_exec():
 
     sheet = wb["RIS2020"]
     device_list = []
-    excluded_ids = []
-    included_ids = []
+    excluded_ids = ['1626']
+    included_ids = ['0221','0221','0221','0309','0309','0309','0392','0392','0432','0432','0432','0432','0548','0548','0548','0555','0555','0593','0593','0600','0763','0763','1512','1512','1512','1512','2069','2531','2531','2643','2643','2678']
     excluded_ips = []
     included_ips = []
 
@@ -116,8 +116,8 @@ def env_exec():
             site_id = row[0]
             # if validate_ip(ip) and validate_date_inter(data_presi) and site_id not in excluded_ids and ip not in excluded_ips:
             # if validate_ip(ip) and hostname == '0073-B01-SW01':
-            if validate_ip(ip) and site_id == '0674':
-            # if validate_ip(ip) and site_id in included_ids or ip in included_ips:
+            # if validate_ip(ip) and site_id == '2342':
+            if validate_ip(ip) and (site_id in included_ids or ip in included_ips):
                 # if str(hostname[:4]) == site_id:
                     equipment = {
                         'device_type': 'cisco_ios',
@@ -125,7 +125,7 @@ def env_exec():
                         'username': username,
                         'password': password,
                         'secret': site_id,
-                        'ssh_config_file': '~/.ssh/config'
+                        # 'ssh_config_file': '~/.ssh/config'
                     }
 
                     device_list.append(equipment)
@@ -197,7 +197,7 @@ def equip_info(output, hostname):
 
 def write_output(equipment, model, serial_number, ios, hostname):
     with open(os.path.join('Outputs', 'output-SW-info.txt'), 'at') as f:
-        f.write(f"{equipment['secret']} ({equipment['ip']}): {model}\t{serial_number}\t{ios}\t{hostname}\n")
+        f.write(f"{equipment['secret']} ({equipment['ip']}):\t{model}\t{serial_number}\t{ios}\t{hostname}\n")
         main_logger.info(f"Completed: {equipment['secret']} ({equipment['ip']})")
 
 
