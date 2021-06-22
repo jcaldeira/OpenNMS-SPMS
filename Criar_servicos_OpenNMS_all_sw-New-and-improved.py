@@ -51,9 +51,7 @@ def main():
         'Ù': 'U',
         'ç': 'c',
         's/n': '',
-        'S/N': '',
-        'º': 'r',
-        '\'': ''
+        'S/N': ''
     }
 
     try:
@@ -72,10 +70,10 @@ def main():
 
     sheet = wb["RIS2020"]
     counter = 0
-    excluded_ids = ['1626']
+    excluded_ids = []
     included_ids = []
     excluded_ips = []
-    included_ips = ['10.33.7.241']
+    included_ips = []
     with open(os.path.join('Outputs', 'output-servicos.txt'), 'wt') as f:
         for row in sheet.iter_rows(min_row=3, values_only=True):
             if type(row[26]) == datetime.datetime:
@@ -86,8 +84,8 @@ def main():
                 site_id = row[0]
                 # if validate_ip(ip) and validate_date_inter(data_presi) and site_id not in excluded_ids and ip not in excluded_ips:
                 # if validate_ip(ip) and hostname == '0073-B01-SW01':
-                # if validate_ip(ip) and site_id == '2605':
-                if validate_ip(ip) and (site_id in included_ids or ip in included_ips):
+                if validate_ip(ip) and site_id == '0674':
+                # if validate_ip(ip) and (site_id in included_ids or ip in included_ips):
                     # if str(hostname[:4]) == site_id:
                     entidade, morada, cp, localidade, latitude, longitude, requisition, modelo, serial, node_id = site_info(row, chars)
 
@@ -130,10 +128,10 @@ def site_info(row, chars):
     modelo = str(row[20]).strip()
     serial = str(row[21]).strip()
     node_id = str(row[27]).strip()
-    for char in chars:
+    for char in morada:
         if char in chars:
             morada = morada.replace(char, chars[char]).strip()
-    for char in chars:
+    for char in localidade:
         if char in chars:
             localidade = localidade.replace(char, chars[char]).strip()
     return entidade, morada, cp, localidade, latitude, longitude, requisition, modelo, serial, node_id
@@ -141,8 +139,8 @@ def site_info(row, chars):
 
 
 def validate_date_inter(date):
-    low_date_lim = datetime.date(2021, 6, 21)
-    high_date_lim = datetime.date(2021, 6, 22)
+    low_date_lim = datetime.date(2021, 5, 24)
+    high_date_lim = datetime.date(2021, 5, 28)
     return low_date_lim <= date <= high_date_lim
 
 
