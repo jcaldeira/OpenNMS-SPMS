@@ -52,8 +52,11 @@ def main():
         'ç': 'c',
         's/n': '',
         'S/N': '',
-        'º': 'r',
-        '\'': ''
+        'º': '',
+        'ª': '',
+        '\'': '',
+        '/': ' ',
+        '\\': ' '
     }
 
     try:
@@ -72,8 +75,9 @@ def main():
 
     sheet = wb["RIS2020"]
     counter = 0
+    set1 = {}
     excluded_ids = []
-    included_ids = []
+    included_ids = ['0153']
     excluded_ips = []
     included_ips = []
     with open(os.path.join('Outputs', 'output-servicos.txt'), 'wt') as f:
@@ -86,8 +90,7 @@ def main():
                 site_id = row[0]
                 # if validate_ip(ip) and validate_date_inter(data_presi) and site_id not in excluded_ids and ip not in excluded_ips:
                 # if validate_ip(ip) and hostname == '0073-B01-SW01':
-                if validate_ip(ip) and site_id == '0674':
-                # if validate_ip(ip) and (site_id in included_ids or ip in included_ips):
+                if validate_ip(ip) and (site_id in included_ids or ip in included_ips):
                     # if str(hostname[:4]) == site_id:
                     entidade, morada, cp, localidade, latitude, longitude, requisition, modelo, serial, node_id = site_info(row, chars)
 
@@ -112,11 +115,11 @@ def main():
                     counter += 1
 
 
-    wb.close()
-    if delTempFileFlag == True:
-        os.remove(excelFileName)
-
     print(f'Generated {counter} configurations')
+
+    wb.close()
+    if delTempFileFlag:
+        os.remove(excelFileName)
 
 
 def site_info(row, chars):
@@ -141,8 +144,8 @@ def site_info(row, chars):
 
 
 def validate_date_inter(date):
-    low_date_lim = datetime.date(2021, 5, 24)
-    high_date_lim = datetime.date(2021, 5, 28)
+    low_date_lim = datetime.date(2021, 7, 6)
+    high_date_lim = datetime.date(2021, 7, 9)
     return low_date_lim <= date <= high_date_lim
 
 

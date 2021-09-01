@@ -10,10 +10,8 @@ import os
 import subprocess
 import sys
 import time
-from copy import copy
 
 import openpyxl
-from openpyxl.styles import NamedStyle
 from openpyxl.styles import Alignment, Border, Side
 
 main_logger = logging.getLogger(__name__)
@@ -36,11 +34,11 @@ main_logger.addHandler(stream_handler)
 
 def main():
     if sys.platform in ('linux', 'darwin'):
-        excel = '/mnt/c/Users/joao.caldeira.ext/SPMS - Serviços Partilhados do Ministério da Saúde, EPE/SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro/RIS2020 - Cadastro.xlsx'
+        excel = '/mnt/c/Users/joao.caldeira.ext/OneDrive - Portugal Telecom/Trabalho/COS/SPMS/PRESI/RIS2020 - Cadastro.xlsx'
         excel2 = '/mnt/c/Users/joao.caldeira.ext/OneDrive - Portugal Telecom/Trabalho/COS/SPMS/PRESI/Calendarização-quattro.xlsx'
     elif sys.platform == 'win32':
-        excel = r"C:\Users\joao.caldeira.ext\SPMS - Serviços Partilhados do Ministério da Saúde, EPE\SPMS DSI RDIS - RIS Corporate - RIS2020 Cadastro\RIS2020 - Cadastro.xlsx"
-        # excel = r"C:\Users\joao.caldeira.ext\OneDrive - Portugal Telecom\Trabalho\COS\SPMS\PRESI\RIS2020 - Cadastro - Copy.xlsx"
+        # excel = r"C:\Users\joao.caldeira.ext\OneDrive - Portugal Telecom\Trabalho\COS\SPMS\PRESI\RIS2020 - Cadastro.xlsx"
+        excel = r"C:\Users\joao.caldeira.ext\OneDrive - Portugal Telecom\Trabalho\COS\SPMS\PRESI\RIS2020 - Cadastro.xlsx"
         excel2 = r"C:\Users\joao.caldeira.ext\OneDrive - Portugal Telecom\Trabalho\COS\SPMS\PRESI\Calendarização-quattro.xlsx"
 
     excelFileName = os.path.basename(excel)
@@ -97,7 +95,7 @@ def main():
 
     lista_sites = []
 
-    # # Get all sites with schedule for this week
+    # Get all sites with schedule for this week
     for row in sheet2.iter_rows(min_row=2, values_only=True):
         if type(row[5]) == datetime.datetime and str(row[10]).upper() == 'CONFIRMADO':
             site_info = {
@@ -109,7 +107,7 @@ def main():
 
     for site in lista_sites:
         for row_index, row2 in enumerate(sheet_values.iter_rows(min_row=3, values_only=True), 3):
-            if site['site_id'] == row2[0] and row2[26] == None:
+            if site['site_id'] == row2[0] and row2[26] is None:
                 sheet[f'AA{row_index}'].value = site['date_presi']
                 sheet[f'AA{row_index}'].alignment = style['alignment']
                 sheet[f'AA{row_index}'].border = style['border']
@@ -126,9 +124,9 @@ def main():
     wb_values.close()
     wb.close()
     wb2.close()
-    if delTempFileFlag == True:
+    if delTempFileFlag:
         os.remove(excelFileName)
-    if delTempFileFlag2 == True:
+    if delTempFileFlag2:
         os.remove(excelFileName2)
 
     return len(lista_sites)
@@ -149,8 +147,6 @@ def createTempFile(pathToExcelFile, cwd, excelFileName):
     elif sys.platform == 'win32':
         subprocess.run(['robocopy', pathToExcelFile, cwd, excelFileName], shell=True, stdout=subprocess.DEVNULL)
 
-    # tempFile = f'{os.path.splitext(excelFileName)[0]}.temp{os.path.splitext(excelFileName)[1]}'
-    # os.rename(excelFileName, f'temp-{tempFile}')
 
 
 
